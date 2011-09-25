@@ -18,7 +18,7 @@ $("#autoindex tr a").each( function(i) {
 			});
 	}
 	});
-
+    if (data.length > 0) {
     $("#gallery").galleria({
     preload: 3,
     showInfo: true,
@@ -31,6 +31,9 @@ $("#autoindex tr a").each( function(i) {
     data_source: data
 
     });
+    } else {
+	$("#gallery").text("no images found");
+    }
     //if (Galleria) { $("body").text('Galleria works') }
 
  });
