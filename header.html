@@ -1,0 +1,44 @@
+<html>
+    <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="/galleria/galleria/galleria-1.2.5.min.js"></script>
+<script src="/galleria/galleria/themes/classic/galleria.classic.min.js"></script>
+    </head>
+    <body>
+
+<script>
+ $(document).ready(function() {
+var data = [];
+var foundParentLink = false;
+$("#autoindex tr a").each( function(i) {
+	if (-1 != this.href.search(/(jpg|gif)$/i)) {
+		data.push({
+			image: this.href,
+			link: this.href
+			});
+	}
+	});
+
+    $("#gallery").galleria({
+    preload: 3,
+    showInfo: true,
+    showCounter: true,
+    thumbnails: "numbers",
+    carosel: false,
+    transition: "fadeslide",
+        width: 640,
+        height: 500,
+    data_source: data
+
+    });
+    //if (Galleria) { $("body").text('Galleria works') }
+
+ });
+</script>
+        <div id="test">
+	</div>
+<hr />
+        <div id="gallery" style="float:right">
+	</div>
+	<div id="autoindex" style="">
+

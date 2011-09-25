@@ -1,0 +1,22 @@
+        
+#http://recursive-design.com/blog/2008/12/29/styling-apache-directory-listings-with-mod_autoindex/
+        <IfModule mod_autoindex.c>
+            Options Indexes FollowSymLinks
+            IndexOptions FancyIndexing 
+            IndexOptions VersionSort 
+            IndexOptions HTMLTable 
+            IndexOptions FoldersFirst 
+            #IndexOptions IconsAreLinks 
+            IndexOptions IgnoreCase 
+            IndexOptions SuppressIcon
+            #IndexOptions SuppressDescription 
+            IndexOptions SuppressHTMLPreamble 
+            #IndexOptions XHTML 
+            #IndexOptions IconWidth=16 
+            #IndexOptions IconHeight=16 
+            IndexOptions NameWidth=*
+            IndexOptions DescriptionWidth=*
+            IndexOrderDefault Descending Name
+            HeaderName /galleria/header.html
+            ReadmeName /galleria/footer.html
+        </ifModule>
