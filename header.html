@@ -10,11 +10,21 @@
  $(document).ready(function() {
 var data = [];
 var foundParentLink = false;
-$("#autoindex tr a").each( function(i) {
-	if (-1 != this.href.search(/(jpg|gif)$/i)) {
+$("#autoindex tr").each( function(i) {
+	var link;
+        $("a", this).each(function() { link = this.href; });
+
+	//link, date, size, description
+	var info = [];
+        $("td", this).each(function() { info.push(this.innerHTML); });
+	if ((link !== undefined) && (-1 != link.search(/(jpg|gif)$/i))) {
 		data.push({
-			image: this.href,
-			link: this.href
+			image: link,
+			link: link,
+//    thumb: 'image.jpg',
+//    big: 'image.jpg',
+    title: link.replace(/.*\//, ''),
+    description: info[1] + " - " + info[2] + " - " + info[3],
 			});
 	}
 	});
