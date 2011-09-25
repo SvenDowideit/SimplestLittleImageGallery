@@ -1,0 +1,7 @@
+I'm travelling, and have lots of images that I'm rsync-ing to my server.
+
+I don't like any of the image gallery scripts that I've played with, so I wrote my own.
+
+however, it uses _NO_ server side scripts, just a .htaccess file that turns on autoindex-ing, and custom header&footer html that adds the Galleria javascript component.
+
+SimplestLittleImageGallery uses <a href="http://galleria.aino.se">Galleria</a> and Apache mod_autoindex
